@@ -1,23 +1,21 @@
 :root {
-  /* Fondo oscuro elegante con tinte azulado */
-  --bg-deep: #07070d;
-  --bg-surface: #101018;
-  --bg-surface-elevated: #161622;
-  --border-subtle: rgba(255, 255, 255, 0.08);
-  --border-active: rgba(255, 42, 133, 0.35);
+  /* Paleta Oficial Party Shop: Azul Eléctrico y Rosa Neón */
+  --pink: #ff2a85;
+  --pink-light: #ff64a6;
+  --pink-glow: rgba(255, 42, 133, 0.35);
 
-  /* Tonos principales de Party Shop: Azul & Rosado */
-  --color-pink: #ff2a85;
-  --color-blue: #00d2ff;
-  --color-darkblue: #1d4ed8;
-  
-  /* Destellos (Glow) */
-  --glow-pink: rgba(255, 42, 133, 0.28);
-  --glow-blue: rgba(0, 210, 255, 0.22);
+  --blue: #00d2ff;
+  --blue-light: #5ce1e6;
+  --blue-glow: rgba(0, 210, 255, 0.3);
+
+  /* Superficies y Bordes de Cristal */
+  --bg-card: rgba(15, 16, 26, 0.72);
+  --bg-card-hover: rgba(22, 24, 38, 0.85);
+  --border-glass: rgba(255, 255, 255, 0.08);
+
+  --text-main: #ffffff;
+  --text-muted: #a1a1b5;
   --whatsapp: #25d366;
-
-  --text-main: #f8fafc;
-  --text-muted: #94a3b8;
   --radius-sm: 8px;
   --radius-md: 16px;
   --radius-pill: 999px;
@@ -32,41 +30,58 @@
 
 html {
   scroll-behavior: smooth;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   color: var(--text-main);
-  background-color: var(--bg-deep);
-  /* Textura de fondo con sutil cuadrícula moderna */
-  background-image: 
-    radial-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px);
-  background-size: 32px 32px;
+  background-color: #070811;
   overflow-x: hidden;
+}
+
+/* FONDO AMBIENTAL DEFINITIVO: Auras vivas Azul + Rosa fijas */
+body {
+  min-height: 100vh;
+  background-color: #070811;
+  background-image: 
+    radial-gradient(circle at 10% 15%, rgba(255, 42, 133, 0.15) 0%, transparent 45%),
+    radial-gradient(circle at 90% 25%, rgba(0, 210, 255, 0.15) 0%, transparent 45%),
+    radial-gradient(circle at 50% 55%, rgba(120, 50, 220, 0.12) 0%, transparent 55%),
+    radial-gradient(circle at 15% 85%, rgba(0, 210, 255, 0.12) 0%, transparent 45%),
+    radial-gradient(circle at 85% 90%, rgba(255, 42, 133, 0.13) 0%, transparent 45%);
+  background-attachment: fixed;
+  background-size: 100% 100%;
 }
 
 .container {
   width: 90%;
-  max-width: 1240px;
+  max-width: 1220px;
   margin: 0 auto;
 }
 
-/* Luces ambientales en degradado Azul/Rosa */
-.glow-ambient {
-  position: absolute;
-  border-radius: 50%;
-  pointer-events: none;
-  filter: blur(130px);
-  z-index: 0;
+/* TÍTULOS CON DEGRADADO AZUL Y ROSA */
+.section-title {
+  font-size: 2.3rem;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  background: linear-gradient(135deg, #ffffff 25%, var(--blue) 65%, var(--pink) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 0.6rem;
 }
 
-/* NAVBAR */
+.section-subtitle {
+  color: var(--text-muted);
+  font-size: 1.05rem;
+}
+
+/* NAVBAR (Solo Logo) */
 .navbar {
   position: sticky;
   top: 0;
-  background-color: rgba(7, 7, 13, 0.85);
-  backdrop-filter: blur(18px);
-  -webkit-backdrop-filter: blur(18px);
-  border-bottom: 1px solid var(--border-subtle);
+  background-color: rgba(7, 8, 17, 0.82);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--border-glass);
   z-index: 100;
-  padding: 0.85rem 0;
+  padding: 0.75rem 0;
 }
 .nav-content {
   display: flex;
@@ -76,24 +91,23 @@ html {
 .nav-logo {
   display: flex;
   align-items: center;
-  gap: 0.85rem;
   text-decoration: none;
 }
 .nav-logo-img {
-  height: 42px;
+  height: 48px;
   width: auto;
+  max-width: 170px;
   object-fit: contain;
-  filter: drop-shadow(0 0 8px var(--glow-pink));
+  transition: var(--transition);
+  filter: drop-shadow(0 0 10px rgba(0, 210, 255, 0.25));
 }
-.nav-logo-text {
-  font-weight: 800;
-  font-size: 1.25rem;
-  color: #fff;
-  letter-spacing: -0.02em;
+.nav-logo-img:hover {
+  transform: scale(1.04);
+  filter: drop-shadow(0 0 14px var(--pink-glow));
 }
 .nav-links {
   display: flex;
-  gap: 2rem;
+  gap: 2.2rem;
 }
 .nav-links a {
   text-decoration: none;
@@ -101,9 +115,10 @@ html {
   font-weight: 500;
   font-size: 0.95rem;
   transition: var(--transition);
+  position: relative;
 }
 .nav-links a:hover {
-  color: var(--color-pink);
+  color: var(--blue);
 }
 .nav-toggle {
   display: none;
@@ -119,9 +134,9 @@ html {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 0.75rem 1.6rem;
+  padding: 0.8rem 1.8rem;
   border-radius: var(--radius-sm);
-  font-weight: 600;
+  font-weight: 700;
   text-decoration: none;
   transition: var(--transition);
   cursor: pointer;
@@ -129,29 +144,29 @@ html {
   font-size: 0.95rem;
 }
 
-/* Botón con degradado Rosa a Azul */
 .btn-primary {
-  background: linear-gradient(135deg, var(--color-pink) 0%, var(--color-blue) 100%);
+  background: linear-gradient(135deg, var(--pink) 0%, var(--blue) 100%);
   color: #ffffff;
-  box-shadow: 0 4px 20px var(--glow-pink);
+  box-shadow: 0 4px 22px var(--pink-glow);
   border: 1px solid rgba(255, 255, 255, 0.2);
 }
 .btn-primary:hover {
   transform: translateY(-2px);
-  box-shadow: 0 8px 30px rgba(255, 42, 133, 0.45);
+  box-shadow: 0 8px 30px rgba(0, 210, 255, 0.5);
 }
 
 .btn-secondary {
-  background: rgba(255, 255, 255, 0.04);
+  background: rgba(255, 255, 255, 0.05);
   color: #fff;
-  border: 1px solid var(--border-subtle);
+  border: 1px solid var(--border-glass);
   margin-left: 0.75rem;
-  backdrop-filter: blur(8px);
+  backdrop-filter: blur(10px);
 }
 .btn-secondary:hover {
-  border-color: var(--color-blue);
-  color: var(--color-blue);
+  border-color: var(--blue);
+  color: var(--blue);
   transform: translateY(-2px);
+  box-shadow: 0 0 20px var(--blue-glow);
 }
 
 .btn-whatsapp {
@@ -171,23 +186,6 @@ html {
   position: relative;
   padding: 8rem 0 6rem;
   text-align: center;
-  overflow: hidden;
-}
-/* Destello Rosa a la izquierda */
-.hero-glow-pink {
-  width: 480px;
-  height: 480px;
-  background: radial-gradient(circle, var(--glow-pink) 0%, transparent 70%);
-  top: -50px;
-  left: 20%;
-}
-/* Destello Azul a la derecha */
-.hero-glow-blue {
-  width: 500px;
-  height: 500px;
-  background: radial-gradient(circle, var(--glow-blue) 0%, transparent 70%);
-  top: -20px;
-  right: 15%;
 }
 .hero-content {
   position: relative;
@@ -197,141 +195,139 @@ html {
 .hero-badge {
   display: inline-flex;
   align-items: center;
-  background: rgba(255, 42, 133, 0.08);
-  border: 1px solid rgba(255, 42, 133, 0.3);
-  color: var(--color-pink);
-  padding: 0.4rem 1.2rem;
+  background: rgba(255, 42, 133, 0.1);
+  border: 1px solid rgba(255, 42, 133, 0.35);
+  color: var(--pink-light);
+  padding: 0.45rem 1.3rem;
   border-radius: var(--radius-pill);
-  font-size: 0.82rem;
+  font-size: 0.85rem;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.06em;
-  margin-bottom: 1.75rem;
-  box-shadow: 0 0 15px var(--glow-pink);
+  margin-bottom: 1.8rem;
+  box-shadow: 0 0 20px var(--pink-glow);
 }
 .hero-title {
-  font-size: 3.6rem;
+  font-size: 3.7rem;
   line-height: 1.1;
   font-weight: 800;
   letter-spacing: -0.04em;
   margin-bottom: 1.5rem;
-  background: linear-gradient(135deg, #ffffff 40%, var(--color-pink) 80%, var(--color-blue) 100%);
+  background: linear-gradient(135deg, #ffffff 30%, var(--pink) 75%, var(--blue) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 .hero-subtitle {
-  font-size: 1.15rem;
+  font-size: 1.2rem;
   color: var(--text-muted);
   margin-bottom: 2.5rem;
   line-height: 1.6;
 }
 
-/* ABOUT SECTION */
+/* SOBRE NOSOTROS */
 .about-section {
   padding: 6rem 0;
-  border-top: 1px solid var(--border-subtle);
-  border-bottom: 1px solid var(--border-subtle);
-  background: rgba(16, 16, 24, 0.4);
-}
-.section-title {
-  font-size: 2.2rem;
-  font-weight: 800;
-  letter-spacing: -0.03em;
-  background: linear-gradient(135deg, #ffffff 60%, var(--color-pink) 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  border-top: 1px solid var(--border-glass);
+  border-bottom: 1px solid var(--border-glass);
+  background: rgba(10, 11, 20, 0.35);
 }
 .about-features {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 1.5rem;
-  margin-top: 2rem;
+  gap: 1.75rem;
+  margin-top: 2.5rem;
 }
 .feature-item {
-  background: var(--bg-surface);
-  border: 1px solid var(--border-subtle);
-  padding: 1.75rem;
+  background: var(--bg-card);
+  border: 1px solid var(--border-glass);
+  padding: 2rem;
   border-radius: var(--radius-md);
+  backdrop-filter: blur(14px);
   transition: var(--transition);
 }
 .feature-item:hover {
-  border-color: rgba(0, 210, 255, 0.3);
+  border-color: rgba(0, 210, 255, 0.4);
   transform: translateY(-4px);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), 0 0 20px var(--glow-blue);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), 0 0 25px var(--blue-glow);
 }
 .feature-icon {
-  width: 40px;
-  height: 40px;
-  border-radius: 10px;
-  background: rgba(255, 42, 133, 0.1);
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background: rgba(255, 42, 133, 0.12);
   border: 1px solid rgba(255, 42, 133, 0.3);
-  color: var(--color-pink);
+  color: var(--pink);
   display: flex;
   align-items: center;
   justify-content: center;
-  font-weight: 700;
-  margin-bottom: 1rem;
+  font-weight: 800;
+  font-size: 1.2rem;
+  margin-bottom: 1.2rem;
 }
 
-/* CATALOG & FILTERS */
+/* CATÁLOGO Y FILTROS */
 .catalog-section {
   padding: 7rem 0;
 }
 .category-filters {
   display: flex;
   justify-content: center;
-  gap: 0.6rem;
+  gap: 0.75rem;
   margin: 2.5rem 0 3.5rem;
   flex-wrap: wrap;
 }
 .filter-btn {
-  padding: 0.55rem 1.4rem;
-  border: 1px solid var(--border-subtle);
+  padding: 0.6rem 1.4rem;
+  border: 1px solid var(--border-glass);
   background: rgba(255, 255, 255, 0.03);
   color: var(--text-muted);
   border-radius: var(--radius-pill);
   cursor: pointer;
-  font-size: 0.9rem;
-  font-weight: 500;
+  font-size: 0.92rem;
+  font-weight: 600;
+  backdrop-filter: blur(10px);
   transition: var(--transition);
 }
 .filter-btn:hover {
-  border-color: var(--color-pink);
-  color: #fff;
+  border-color: var(--blue);
+  color: var(--blue);
+  box-shadow: 0 0 15px var(--blue-glow);
 }
 .filter-btn.active {
-  background: linear-gradient(135deg, var(--color-pink), var(--color-blue));
+  background: linear-gradient(135deg, var(--pink), var(--blue));
   color: #ffffff;
   border-color: transparent;
-  font-weight: 700;
-  box-shadow: 0 0 18px var(--glow-pink);
+  box-shadow: 0 0 22px var(--pink-glow);
 }
 
-/* TARJETAS DE PRODUCTO */
+/* PRODUCT CARDS */
 .products-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
   gap: 2rem;
 }
 .product-card {
-  background: var(--bg-surface);
-  border: 1px solid var(--border-subtle);
+  background: var(--bg-card);
+  border: 1px solid var(--border-glass);
   border-radius: var(--radius-md);
   overflow: hidden;
   display: flex;
   flex-direction: column;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
   transition: var(--transition);
 }
 .product-card:hover {
-  transform: translateY(-6px);
-  border-color: rgba(255, 42, 133, 0.4);
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.7), 0 0 25px var(--glow-pink);
+  transform: translateY(-7px);
+  background: var(--bg-card-hover);
+  border-color: rgba(255, 42, 133, 0.45);
+  box-shadow: 0 18px 38px rgba(0, 0, 0, 0.7), 0 0 28px var(--pink-glow);
 }
 .product-image-container {
   position: relative;
   width: 100%;
   height: 240px;
-  background: radial-gradient(circle, #1a162b 0%, #0c0b14 100%);
+  background: radial-gradient(circle, #191829 0%, #0c0d16 100%);
   overflow: hidden;
 }
 .product-image {
@@ -347,13 +343,13 @@ html {
   position: absolute;
   top: 12px;
   left: 12px;
-  background: rgba(7, 7, 13, 0.8);
-  backdrop-filter: blur(8px);
-  border: 1px solid rgba(0, 210, 255, 0.3);
-  color: var(--color-blue);
-  padding: 0.3rem 0.75rem;
+  background: rgba(7, 8, 17, 0.82);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(0, 210, 255, 0.35);
+  color: var(--blue);
+  padding: 0.35rem 0.8rem;
   border-radius: var(--radius-pill);
-  font-size: 0.72rem;
+  font-size: 0.75rem;
   font-weight: 700;
   text-transform: uppercase;
 }
@@ -364,14 +360,14 @@ html {
   flex-grow: 1;
 }
 .product-title {
-  font-size: 1.18rem;
+  font-size: 1.2rem;
   font-weight: 700;
   margin-bottom: 0.5rem;
   color: #fff;
 }
 .product-description {
   color: var(--text-muted);
-  font-size: 0.9rem;
+  font-size: 0.92rem;
   line-height: 1.55;
   margin-bottom: 1.5rem;
   flex-grow: 1;
@@ -380,52 +376,58 @@ html {
   display: flex;
   flex-direction: column;
   gap: 0.85rem;
-  border-top: 1px solid var(--border-subtle);
-  padding-top: 1rem;
+  border-top: 1px solid var(--border-glass);
+  padding-top: 1.1rem;
 }
 .product-price {
-  font-size: 1.4rem;
+  font-size: 1.45rem;
   font-weight: 800;
-  color: var(--color-blue);
+  color: var(--blue);
   letter-spacing: -0.02em;
 }
 
 /* CONTACTO */
 .contact-section {
   padding: 6rem 0;
-  border-top: 1px solid var(--border-subtle);
+  border-top: 1px solid var(--border-glass);
 }
 .contact-cards-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 1.5rem;
+  gap: 1.75rem;
   margin-top: 2.5rem;
 }
 .contact-card {
-  padding: 2rem;
-  background: var(--bg-surface);
-  border: 1px solid var(--border-subtle);
+  padding: 2.2rem;
+  background: var(--bg-card);
+  border: 1px solid var(--border-glass);
   border-radius: var(--radius-md);
+  backdrop-filter: blur(14px);
   transition: var(--transition);
 }
 .contact-card:hover {
-  border-color: var(--color-pink);
-  transform: translateY(-3px);
-  box-shadow: 0 0 20px var(--glow-pink);
+  border-color: var(--pink);
+  transform: translateY(-4px);
+  box-shadow: 0 0 25px var(--pink-glow);
 }
 .contact-link {
-  color: var(--color-pink);
+  color: var(--blue);
   text-decoration: none;
-  font-weight: 600;
+  font-weight: 700;
   display: inline-block;
-  margin-top: 0.5rem;
+  margin-top: 0.75rem;
+  transition: var(--transition);
+}
+.contact-link:hover {
+  color: var(--pink);
+  transform: translateX(4px);
 }
 
 /* FOOTER */
 .footer {
   padding: 3rem 0;
-  border-top: 1px solid var(--border-subtle);
-  background: var(--bg-deep);
+  border-top: 1px solid var(--border-glass);
+  background: rgba(7, 8, 17, 0.95);
 }
 .footer-content {
   display: flex;
@@ -436,15 +438,17 @@ html {
 }
 .social-links {
   display: flex;
-  gap: 1.5rem;
+  gap: 1.75rem;
 }
 .social-links a {
   color: var(--text-muted);
   text-decoration: none;
+  font-weight: 500;
   transition: var(--transition);
 }
 .social-links a:hover {
-  color: var(--color-pink);
+  color: var(--pink);
+  text-shadow: 0 0 12px var(--pink-glow);
 }
 
 /* BOTÓN WHATSAPP PULSANTE */
@@ -452,14 +456,14 @@ html {
   position: fixed;
   bottom: 25px;
   right: 25px;
-  width: 60px;
-  height: 60px;
+  width: 62px;
+  height: 62px;
   background-color: var(--whatsapp);
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.8rem;
+  font-size: 1.9rem;
   box-shadow: 0 0 20px rgba(37, 211, 102, 0.5);
   text-decoration: none;
   z-index: 999;
@@ -475,8 +479,9 @@ html {
   100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
 }
 
+/* MÓVILES */
 @media (max-width: 768px) {
-  .hero-title { font-size: 2.3rem; }
+  .hero-title { font-size: 2.4rem; }
   .nav-toggle { display: block; }
   .nav-links {
     display: none;
@@ -484,11 +489,12 @@ html {
     top: 100%;
     left: 0;
     width: 100%;
-    background-color: var(--bg-surface-elevated);
-    border-bottom: 1px solid var(--border-subtle);
+    background-color: rgba(12, 13, 24, 0.97);
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid var(--border-glass);
     flex-direction: column;
     padding: 1.5rem;
-    gap: 1rem;
+    gap: 1.25rem;
   }
   .nav-links.active { display: flex; }
   .footer-content { flex-direction: column; text-align: center; }
