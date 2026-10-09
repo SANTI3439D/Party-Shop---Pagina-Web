@@ -199,7 +199,9 @@
   padding: 5.5rem 0;
   border-top: 1px solid var(--border-light);
   border-bottom: 1px solid var(--border-light);
-  background: rgba(255, 255, 255, 0.6);
+  background: rgba(255, 255, 255, 0.18);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
 }
 .about-features {
   display: grid;
@@ -362,7 +364,9 @@
 .contact-section {
   padding: 5.5rem 0;
   border-top: 1px solid var(--border-light);
-  background: rgba(255, 255, 255, 0.6);
+  background: rgba(255, 255, 255, 0.18);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
 }
 .contact-cards-grid {
   display: grid;
@@ -402,7 +406,9 @@
 .footer {
   padding: 3rem 0;
   border-top: 1px solid var(--border-light);
-  background: #ffffff;
+  background: rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
   color: var(--text-muted);
 }
 .footer-content {
@@ -483,8 +489,9 @@
   }
   .nav-links.active { display: flex; }
   .footer-content { flex-direction: column; text-align: center; }
- }
- /* ===================================================
+}
+
+/* ===================================================
    DISEÑO DEL SLIDER DE TEMA (SOL / LUNA)
    =================================================== */
 .nav-actions {
@@ -548,6 +555,7 @@
   transform: translateX(24px);
   background: linear-gradient(135deg, var(--pink), var(--blue));
 }
+
 /* ===================================================
    ADAPTACIONES DE COMPONENTES AL MODO OSCURO
    =================================================== */
