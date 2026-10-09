@@ -1,4 +1,5 @@
 import React from 'react';
+import './App.css'; // <--- ESTA ES LA LÍNEA QUE FALTABA
 import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
 import { About } from './components/About';
@@ -13,9 +14,9 @@ function App() {
       <Navbar />
       <main>
         <Hero />
+        <About />
         <Catalog />
         <Contact />
-        <About />
       </main>
       <Footer />
       <WhatsAppFloating />
