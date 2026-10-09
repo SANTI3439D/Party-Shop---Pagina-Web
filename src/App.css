@@ -483,4 +483,30 @@
   }
   .nav-links.active { display: flex; }
   .footer-content { flex-direction: column; text-align: center; }
+  /* Aplicar estilo Sharpie a todos los encabezados y elementos clave */
+.hero-title,
+.section-title,
+.product-title,
+.product-price,
+.hero-badge,
+.product-category,
+.btn,
+.filter-btn,
+.contact-card h3 {
+  font-family: 'Permanent Marker', cursive, sans-serif;
+  letter-spacing: 0.03em;
+}
+
+/* Ajustes de tamaño para que respire bien */
+.product-title {
+  font-size: 1.35rem;
+}
+
+.product-price {
+  font-size: 1.55rem;
+}
+
+.btn {
+  font-size: 1.05rem;
+  letter-spacing: 0.04em;
 }
