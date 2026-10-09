@@ -483,6 +483,7 @@
   }
   .nav-links.active { display: flex; }
   .footer-content { flex-direction: column; text-align: center; }
+ } 
   /* Aplicar estilo Sharpie a todos los encabezados y elementos clave */
 .hero-title,
 .section-title,
