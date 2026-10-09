@@ -13,9 +13,9 @@ function App() {
       <Navbar />
       <main>
         <Hero />
-        <About />
         <Catalog />
         <Contact />
+        <About />
       </main>
       <Footer />
       <WhatsAppFloating />

@@ -27,7 +27,7 @@ export const Contact = () => {
           </div>
 
           <div className="contact-card">
-            <h3>Ubicación y Horarios</h3>
+            <h3>Corbetura y Horarios</h3>
             <p>{COMPANY_INFO.address}</p>
             <small>{COMPANY_INFO.schedule}</small>
           </div>

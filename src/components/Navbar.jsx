@@ -19,9 +19,9 @@ export const Navbar = () => {
         </button>
         <nav className={`nav-links ${isOpen ? 'active' : ''}`}>
           <a href="#inicio" onClick={() => setIsOpen(false)}>Inicio</a>
-          <a href="#nosotros" onClick={() => setIsOpen(false)}>Nosotros</a>
           <a href="#catalogo" onClick={() => setIsOpen(false)}>Catálogo</a>
           <a href="#contacto" onClick={() => setIsOpen(false)}>Contacto</a>
+          <a href="#nosotros" onClick={() => setIsOpen(false)}>Nosotros</a>
         </nav>
       </div>
     </header>
