@@ -6,7 +6,7 @@ export const COMPANY_INFO = {
   // Ejemplo para Colombia: "573001234567" | México: "5215512345678"
   whatsappNumber: "573001234567", 
   email: "contacto@tuempresa.com",
-  address: "Ofrecemos nuestros servicios en las zonas deLenguazaque y Ubate y municipios cercanos.",
+  address: "Ofrecemos nuestros servicios en las zonas de Lenguazaque y Ubate y municipios cercanos.",
   schedule: "Lunes a Sábado: 8:00 AM - 6:00 PM",
   socials: {
     instagram: "https://instagram.com/tu_cuenta",
