@@ -1,5 +1,5 @@
 export const COMPANY_INFO = {
-  name: "Nombre de tu Organización",
+  name: "Party Shop",
   tagline: "Productos de calidad pensados para ti",
   description: "Somos una organización dedicada a ofrecer soluciones prácticas con un enfoque cercano y personalizado.",
   // IMPORTANTE: El número debe incluir código de país, sin símbolos (+, - ni espacios)
