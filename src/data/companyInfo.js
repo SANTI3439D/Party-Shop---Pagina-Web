@@ -1,7 +1,7 @@
 export const COMPANY_INFO = {
   name: "Party Shop",
-  tagline: "Productos de calidad pensados para ti",
-  description: "Somos una organización dedicada a ofrecer soluciones prácticas con un enfoque cercano y personalizado.",
+  tagline: "Los mejores productos para tus celebraciones",
+  description: "Buscamos ofrecer productos y detalles creativos para celebrar y acompañar momentos especiales.",
   // IMPORTANTE: El número debe incluir código de país, sin símbolos (+, - ni espacios)
   // Ejemplo para Colombia: "573001234567" | México: "5215512345678"
   whatsappNumber: "573001234567", 
@@ -10,7 +10,6 @@ export const COMPANY_INFO = {
   schedule: "Lunes a Sábado: 8:00 AM - 6:00 PM",
   socials: {
     instagram: "https://instagram.com/tu_cuenta",
-    facebook: "https://facebook.com/tu_cuenta",
     tiktok: "https://tiktok.com/@tu_cuenta"
   }
 };

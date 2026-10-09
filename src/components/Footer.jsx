@@ -13,7 +13,6 @@ export const Footer = () => {
         </div>
         <div className="social-links">
           <a href={COMPANY_INFO.socials.instagram} target="_blank" rel="noopener noreferrer">Instagram</a>
-          <a href={COMPANY_INFO.socials.facebook} target="_blank" rel="noopener noreferrer">Facebook</a>
           <a href={COMPANY_INFO.socials.tiktok} target="_blank" rel="noopener noreferrer">TikTok</a>
         </div>
       </div>
