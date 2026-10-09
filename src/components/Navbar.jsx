@@ -1,6 +1,4 @@
 import React, { useState } from 'react';
-import { COMPANY_INFO } from '../data/companyInfo.js';
-// Importamos la imagen del logo desde assets
 import logoEmpresa from '../assets/logo.png';
 
 export const Navbar = () => {
@@ -9,20 +7,19 @@ export const Navbar = () => {
   return (
     <header className="navbar">
       <div className="container nav-content">
-        <a href="#inicio" className="nav-logo">
-          {/* Logo con fallback al texto si no carga */}
+        {/* Solo el logo de la empresa */}
+        <a href="#inicio" className="nav-logo" aria-label="Ir al inicio">
           <img 
             src={logoEmpresa} 
-            alt={COMPANY_INFO.name} 
+            alt="Logo" 
             className="nav-logo-img" 
           />
-          <span className="nav-logo-text">{COMPANY_INFO.name}</span>
         </a>
 
         <button 
           className="nav-toggle" 
           onClick={() => setIsOpen(!isOpen)}
-          aria-label="Menú"
+          aria-label="Abrir menú"
         >
           ☰
         </button>
