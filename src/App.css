@@ -548,10 +548,25 @@
   transform: translateX(24px);
   background: linear-gradient(135deg, var(--pink), var(--blue));
 }
-
 /* ===================================================
    ADAPTACIONES DE COMPONENTES AL MODO OSCURO
    =================================================== */
+
+/* 1. Corrección de degradados: ahora inician en blanco puro y no se pierden */
+[data-theme="dark"] .section-title,
+[data-theme="dark"] .hero-title {
+  background: linear-gradient(135deg, #ffffff 25%, var(--pink) 70%, var(--blue) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* 2. Corrección del fondo de Contacto y Nosotros: adiós al bloque gris */
+[data-theme="dark"] .about-section,
+[data-theme="dark"] .contact-section {
+  background: rgba(14, 16, 26, 0.45); /* Tinte oscuro suave que deja ver las auras */
+  border-color: rgba(255, 255, 255, 0.08);
+}
+
 [data-theme="dark"] .navbar {
   background-color: rgba(7, 8, 17, 0.85);
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
@@ -563,6 +578,10 @@
   background-color: var(--bg-card);
   border-color: var(--border-light);
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+}
+
+[data-theme="dark"] .product-title {
+  color: #ffffff;
 }
 
 [data-theme="dark"] .product-image-container {
