@@ -14,15 +14,34 @@ export const About = () => {
             <div className="feature-item">
               <span className="feature-icon">✓</span>
               <div>
-                <h4>Atención Inmediata</h4>
-                <p>Respondemos tus dudas en tiempo real por WhatsApp.</p>
+                <h4>Mision</h4>
+                <p>Party Shop tiene como misión ofrecer productos y detalles 
+                  creativos para celebrar y acompañar momentos especiales, brindando 
+                  a sus clientes una experiencia de compra virtual cercana, personalizada 
+                  y confiable. A través de regalos, anchetas, decoración, piñatas y diferentes 
+                  alternativas para celebraciones, busca convertir cada ocasión en un momento 
+                  memorable, atendiendo las necesidades de sus clientes de manera oportuna y con 
+                  propuestas adaptadas a cada  celebración.</p>
               </div>
             </div>
             <div className="feature-item">
               <span className="feature-icon">✓</span>
               <div>
-                <h4>Calidad Garantizada</h4>
-                <p>Cuidamos cada detalle de los productos que entregamos.</p>
+                <h4>Vision</h4>
+                <p>Para el año 2030, Party Shop será reconocida en Lenguazaque, Ubaté y municipios cercanos 
+                como una tienda virtual referente en regalos, detalles y soluciones para celebraciones, destacándose por la creatividad 
+                de sus productos, la calidad de sus servicios, y la confianza de sus clientes, fortaleciendo progresivamente su presencia 
+                digital y ampliando su oferta de productos y servicios .</p>
+                </div>
+            </div>
+            <div className="feature-item">
+              <span className="feature-icon">✓</span>
+              <div>
+                <h4>Objetivo Principal</h4>
+                <p>Fortalecer el posicionamento de Party Shop como negocio virtual 
+                  dedicado a la comercialización de regalos, detalles decoración y productos 
+                  para celebraciones, mediante una comunicación digital efectiva, una forma atractiva y un servicio 
+                  al cliente cercano y confiable.</p>
               </div>
             </div>
           </div>
