@@ -3,7 +3,7 @@ import './App.css';
 import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
 import { About } from './components/About';
-import { Catalog } from './components/Catalog';
+import { InteractiveShowcase } from './components/InteractiveShowcase';
 import { Contact } from './components/Contact';
 import { Footer } from './components/Footer';
 import { WhatsAppFloating } from './components/WhatsAppFloating';
@@ -14,7 +14,7 @@ function App() {
       <Navbar />
       <main>
         <Hero />
-        <Catalog />
+        <InteractiveShowcase />
         <Contact />
         <About />
       </main>
