@@ -1,9 +1,9 @@
 import React from 'react';
-import './App.css'; 
+import './App.css';
 import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
 import { About } from './components/About';
-import { InteractiveShowcase } from './components/InteractiveShowcase';
+import { GalleryShowcase } from './components/GalleryShowcase';
 import { Contact } from './components/Contact';
 import { Footer } from './components/Footer';
 import { WhatsAppFloating } from './components/WhatsAppFloating';
@@ -14,9 +14,9 @@ function App() {
       <Navbar />
       <main>
         <Hero />
-        <InteractiveShowcase />
-        <Contact />
         <About />
+        <GalleryShowcase />
+        <Contact />
       </main>
       <Footer />
       <WhatsAppFloating />
